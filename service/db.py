@@ -28,8 +28,11 @@ class MongoDbAtlasService:
         for dado in dados:
             del dado['_id']
             lista_dados.append(dado)
+
+        lista_dados = sorted(lista_dados, key=lambda x: x['Date'])
         
         lista_dados = lista_dados[-number_games:]
+
         return lista_dados
     
 
